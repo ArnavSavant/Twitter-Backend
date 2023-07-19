@@ -1,6 +1,7 @@
 import express from "express";
 import { connect } from "./config/database.js";
 import Tweet from "./models/tweet.js";
+import Hashtag from "./models/hashtag.js";
 const app = express();
 
 app.listen(3000, async () => {
@@ -9,11 +10,16 @@ app.listen(3000, async () => {
 	await connect();
 	console.log("Mongo DB connected");
 
-	await Tweet.create({
-		content: "This is my first tweet",
-		likes: "0",
-		noOfRetweets: "0",
-		comment: "This is my first comment",
-	});
-   console.log("hello");
+	// await Tweet.create({
+	// 	content: "This is my second tweet",
+	// 	likes: "0",
+	// 	noOfRetweets: "1",
+	// 	comment: "This is my first comment",
+	// });
+
+	// await Hashtag.create({
+	// 	text: "travel",
+	// 	tweets: ["64b304526d62dc5fc21a0779"],
+	// });
+   console.log("Everything is LIVE");
 });
